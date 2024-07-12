@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{% static "home.css" %}' >
+</head>
+<body>
+
+    <div class="nav">
+        <div class="logo">
+           
+        </div>
+    </div>
+
+        <button class="top-right-button" id="top-right-button">
+          <img src='{% static "img/icons8-globe-50.png" %}' >
+          <p>en-US</p>
+        </button>
+
+  
+        <div id="sidebar" class="sidebar">
+            <div class="cross">
+                <button id="cancel-button" class="cancel-button">x</button>
+            </div>
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content.</p>
+        </div>
+
+
+   
+
+    <div class="menu">
+        <div class="user">
+            <img src='{% static "img/icons8-user-64 (1).png" %}'>
+        </div>
+
+        <div class="folder">
+            <img src='{% static "img/icons8-book-100-transformed.png" %}'>
+        </div>
+        
+    </div>
+
+    <div class="upload">
+
+        <div>
+            <input type="file">
+            <img src="{% static 'img/icon (6).svg' %}">
+        </div>
+
+        
+
+        <div class='text'>
+            upload ur files here
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('top-right-button').addEventListener('click', function() {
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+});
+
+    document.getElementById('cancel-button').addEventListener('click',function(){
+        var sidebar=document.getElementById('sidebar');
+        sidebar.classList.remove('active');
+    })
+
+
+    </script>
+    
+</body>
+</html>
