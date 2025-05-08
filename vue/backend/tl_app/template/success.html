@@ -1,0 +1,37 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<body>
+    
+    
+
+    <h1>how to get chat-id</h1>
+    <p> 1. Click the bot link -><a href="https://t.me/itsqubit_bot" target="_blank">qubit-bot</a> to connect Telegram bot chat</p>
+        
+        <p>2. Tap the “Start” button at the bottom of the chat screen to initiate a conversation with the bot. </p>
+        
+        <p>3. Now, send any random messages to the bot(atleast 3) — they can be anything </p>
+        
+        <p>4. After sending those messages, the bot will now have your chat ID-url from its end.</p>
+
+        <p>5. the chat-id will be enclosed in a json-format</p>
+      
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Verify</button>
+        </form>
+    
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+</body>
+</html>

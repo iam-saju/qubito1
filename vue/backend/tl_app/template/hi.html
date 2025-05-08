@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+    <link rel="stylesheet" href="{% static 'css/hi.css' %}">
+</head>
+<body>
+
+    <!-- Chat ID Modal -->
+    <div class="name-phno" id="chatIdModal">
+        <div class="modal-content">
+            <h1 class="text-cred">Sign up</h1>
+            <h4 class="user-text">username</h4>
+            <input type="text" id="nameInput">
+            <h4 class="chat-id-text">chat id<span class="info-icon" onclick="showInfoCarousel()"><img src="{% static 'img/info.svg' %}" style="width: 20px; height: 20px;" class="icon-info"></span></h4>
+            <input type="text" id="chatIdInput">
+            <button onclick="submitChatId()" class="crud-btn">submit</button>
+        </div>
+    </div>
+
+    <!-- Carousel Modal -->
+    <div class="info-carousel" id="infoCarousel">
+        <div class="carousel-content">
+            <span class="close-carousel" onclick="hideInfoCarousel()">&times;</span>
+            <div class="carousel-inner" id="carouselInner">
+                <img src="{% static 'img/yt-step1.jpg' %}" alt="Step 1">
+                <img src="{% static 'img/yt-step2.jpg' %}" alt="Step 2">
+                <img src="{% static 'img/yt-step3.jpg' %}" alt="Step 3">
+            </div>
+            <div class="carousel-buttons">
+                <button onclick="prevSlide()">←</button>
+                <button onclick="nextSlide()">→</button>
+            </div>
+        </div>
+    </div>
+
+
+    <img src="{% static 'img/qubit.png' %}" class="logo">
+
+    <div class="main-div">
+        <div class="username">
+            <img class="user-logo" src="{% static 'img/whale.jpeg' %}" alt="User Profile">
+            <span>hey saju!</span>
+        </div>
+        <button type="button" class="submit" onclick="showUploadDialog()"><img src="{% static 'img/up.svg' %}">upload</button>    
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <span class="close" onclick="hideUploadDialog()">&times;</span>
+            <span class="upload-name">upload</span>
+
+            <div class="drop-area" id="dropArea">
+                <button onclick="document.getElementById('fileInput').click()" class="file-btn"><img src="{% static 'img/file.svg' %}"><span class="btn-text">file</span></button>
+                <button onclick="document.getElementById('folderInput').click()" class="file-btn"><img src="{% static 'img/folder.svg' %}"><span class="btn-text">folder</span></button>
+                <p class="drag-text">or drag here!</p>
+                <input type="file" id="fileInput" multiple hidden>
+                <input type="file" id="folderInput" webkitdirectory directory hidden>
+            </div>
+        </div>
+    </div>
+
+    <div class="icon-button-container">
+        <div class="icon-button">
+            <img src="{% static 'img/icon(26).svg' %}" alt="Settings">
+            <span class="label">faq</span>
+        </div>
+        <div class="icon-button">
+            <img src="{% static 'img/whale.jpeg' %}" alt="User">
+            <span class="label">user</span>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">0 files uploaded</div>
+
+    <script src="{% static 'js/hi.js' %}"></script>
+</body>
+</html>
